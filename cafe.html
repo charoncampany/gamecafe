@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>與卡魯普斯的一天</title>
+<script src="jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="talk.css">
+          <style>
+    #box{
+        background-image: url(cafe.jpg);
+    }
+        
+    </style>     
+    <script>
+        $(document).ready(function() {
+
+            
+var progress = 0;
+var txt;
+            
+    function eventHandler() {
+    switch (progress) {
+            
+		case 0:
+                txt = "找了一會你決定找一家咖啡店坐一下。";
+                break;
+            
+  		case 1:
+            txt = "店裡有一個似曾相識的男子正在用手機為飲品上的拉花拍照！";
+             break;
+        
+        case 2:
+            txt = "除了衣服不同和沒有眼鏡外，根本就是一個野生的卡魯普斯！"
+                break;
+            
+        case 3:
+            txt = " ";
+            $("#b1, #b2").show();
+            $("#wordings").hide();
+            $('#b1').mouseenter(notgo);
+            $('#b2').mouseenter(gogogo);            
+            function notgo(){             
+             $('#b1').click(eventHandler);
+            progress = 18;
+            }
+            
+            function gogogo(){
+            $('#b2').click(eventHandler);
+            progress = 4;
+            }
+            
+            
+            break;
+            
+        case 4:
+            $("#wordings").show();
+            $("#b1, #b2").hide();
+            $("#box").css("background-image","url(cafec.jpg)");
+                txt = "你：「哇你的飲品看起來好美啊」";
+                break;
+            
+  		case 5:
+                txt = "「你也可以去買。」";
+                break;
+            
+        case 6:
+              txt = "你：「你是沒有眼鏡的蓋羅斯局長吧。」";
+                break;
+            
+        case 7:
+             txt = "他看起來很不高興：「我一向沒有視力問題，而且我已經不是局長了。」"
+                break;
+        
+        
+        case 8:
+            $("#b3, #b4").show();
+            $("#wordings").hide();
+            $('#b3').mouseenter(ppl);
+            $('#b4').mouseenter(pet);            
+            function ppl(){             
+             $('#b3').click(eventHandler);
+            progress = 9;
+            }
+            
+            function pet(){
+            $('#b4').click(eventHandler);
+            progress = 14;
+            }
+            break;
+    
+        case 9:
+            $("#wordings").show();
+            $("#b3, #b4").hide();
+            txt = "「我有說過我想回來這裡嗎？」";
+                break;
+                          
+        case 10:
+            txt = "因為他太欠揍，決定揍他";
+                break;
+
+        case 11:
+            txt = "「店員！有人想打我！」";
+            break; 
+            
+        case 12:
+            txt = "凡人是很強的，為了別惹上官司，你只好離開咖啡店了。回去死神局吧！（完）";
+            break;    
+        
+        case 13:
+            window.location ="index.html";
+            break; 
+            
+            
+        case 14:
+            $("#wordings").show();
+            $("#b3, #b4").hide();
+            txt = "「……（逃避）」";
+            break; 
+            
+        case 15:
+            txt = "「我也養得牠們夠久了，或者牠們更需要自由，你還是回去吧。」";
+            break;    
+        
+        case 16:
+         txt = "對方似乎不想再和你說話，你只好回去了（完）";
+            break; 
+            
+        case 17:
+            window.location ="index.html";
+            break; 
+            
+        case 18:
+            $("#wordings").show();
+            $("#b1, #b2").hide();
+                txt = "你在咖啡店充份地休息好了";
+                break;
+            
+  		case 19:
+                txt = "時間不早，回去死神局吧！";
+                break;
+
+        case 20:
+        window.location ="index.html";
+            break; 
+            
+            
+        }
+        
+  		      progress++;
+		        $('#wordings').html(txt);
+		  }
+
+            
+		$('#wordings').click(eventHandler);
+            
+        })
+    </script>
+
+</head>
+<body>
+
+
+<div id="box" class="noselect">
+    
+    <div id= "b1">
+        不理會
+    </div>
+    
+    <div id= "b2">
+        坐到他對面
+    </div>
+    
+    <div id= "b3">
+        告訴他死神局為了找他很辛苦
+    </div>
+    
+    <div id= "b4">
+        告訴他他的寵物很難過
+    </div>
+    
+    <div id="wordings">
+  
+         來到了倫敦。
+
+    </div>
+    
+    
+</div>
+
+    </body>
+</html>
